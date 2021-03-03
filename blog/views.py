@@ -20,7 +20,8 @@ def index(request):
     return render(request, 'blog/index.html', context)
 
 def detail(request, pk):
-    return HttpResponse(f'detail {pk}')
+    post = get_object_or_404(Post, pk=pk)
+    return HttpResponse(f'detail {post.body}')
 
 def page(request, num):
     return HttpResponse(f'page {num}')
