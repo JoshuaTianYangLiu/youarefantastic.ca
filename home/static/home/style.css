@@ -1,0 +1,40 @@
+*:not(code) {
+    font-family: "Ubuntu", "Calibri", "Helvetica", "Arial", sans-serif;
+}
+  
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+  
+.zoom {
+    transition: transform .5s
+}
+  
+.zoom:hover {
+    transform: scale(1.2);
+}
+  
+.zoom-card {
+    transition: transform .5s
+}
+  
+.zoom-card:hover {
+    transform: scale(1.07);
+}
+  
+.footer {
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(239,239,239,0.6);
+}
+  
+.footer-index {
+    position: absolute;
+}

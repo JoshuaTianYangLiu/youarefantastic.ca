@@ -1,0 +1,94 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Projects</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+{% endblock title %}
+
+
+{% block content %}
+    {{block.super}}
+    <div class="container">
+        <h1>Projects</h1>
+        <hr>
+        <div class="row">
+            <div class="col col-4 mt-4">
+                <div class="zoom-card shadow card border-0">
+                    <img class="card-img-top" src="{% static 'home/segment-tree.png' %}">
+                    <div class="card-body">
+                    <h5 class="card-title">Online Judge Solutions</h5>
+                    <p class="card-text">A list of my online judge solutions.</p>
+                    <a href="https://github.com/JoshuaTianYangLiu/Competitive-Programming" class="btn btn-primary"><i class="fab fa-github"></i>&nbsp; Github</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-4 mt-4">
+                <div class="zoom-card shadow card border-0">
+                    <img class="card-img-top" src="{% static 'home/PhysicsCheatSheet.jpg' %}">
+                    <div class="card-body">
+                    <h5 class="card-title">Notes</h5>
+                    <p class="card-text">Notes from various classes, written in LaTeX.</p>
+                    <a href="https://github.com/JoshuaTianYangLiu/Notes" class="btn btn-primary"><i class="fab fa-github"></i>&nbsp; Github</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-4 mt-4">
+                <div class="zoom-card shadow card border-0">
+                    <img class="card-img-top" src="{% static 'home/JOMD.svg' %}">
+                    <div class="card-body">
+                    <h5 class="card-title">JOMD</h5>
+                    <p class="card-text">A discord bot using DMOJ api.</p>
+                    <a href="https://github.com/JoshuaTianYangLiu/JOMD" class="btn btn-primary"><i class="fab fa-github"></i>&nbsp; Github</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-4 mt-4">
+                <div class="zoom-card shadow card border-0">
+                    <img class="card-img-top" src="{% static 'home/EscapeRoom.png' %}">
+                    <div class="card-body">
+                    <h5 class="card-title">Escape Room</h5>
+                    <p class="card-text">Solve puzzles and challenges to escape the room and beat the 3 levels!</p>
+                    <a href="https://github.com/JoshuaTianYangLiu/ProcessingWorks/tree/master/EscapeRoom/EscapeRoom" class="btn btn-primary"><i class="fab fa-github"></i>&nbsp; Github</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-4 mt-4">
+                <div class="zoom-card shadow card border-0">
+                    <img class="card-img-top" src="{% static 'home/Monopoly.png' %}">
+                    <div class="card-body">
+                    <h5 class="card-title">Monopoly</h5>
+                    <p class="card-text">Monopoly written in Java using the hsa library</p>
+                    <a href="https://github.com/JoshuaTianYangLiu/ICS3U/tree/master/ISP_Joshua" class="btn btn-primary"><i class="fab fa-github"></i>&nbsp; Github</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-4 mt-4">
+                <div class="zoom-card shadow card border-0">
+                    <img class="card-img-top" src="{% static 'home/ctf.png' %}">
+                    <div class="card-body">
+                    <h5 class="card-title">CTF Writeup</h5>
+                    <p class="card-text">CTF writeups from various CTF I have done.</p>
+                    <a href="#" class="btn btn-primary"><i class="fab fa-github"></i>&nbsp; Github</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4"></div>    
+
+    <div class="page-footer footer py-4">
+        <ul class="list-inline text-center">
+            <li class="list-inline-item">
+                <a href="https://discord.com/users/107276820184842240" class="text-muted"><i class="zoom fab fa-discord fa-3x px-2"></i></a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://github.com/JoshuaTianYangLiu" class="text-muted"><i class="zoom fab fa-github fa-3x px-2"></i></a>
+            </li>
+            <li class="list-inline-item">
+                <a href="mailto:JoshuaL@youarefantastic.ca" class="text-muted"><i class="zoom far fa-envelope fa-3x px-2"></i></a>
+            </li>
+        </ul>
+    </div>
+
+{% endblock content %}

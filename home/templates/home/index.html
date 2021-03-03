@@ -1,0 +1,163 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block title %}
+    <title>YouAreFantastic.ca</title>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+{% endblock title %}
+
+
+{% block content %}
+    <div id="particles-js"></div>
+    {{block.super}}
+    <div class="container mt-3 bg-transparent">
+    <div class="row">
+        <div class="col col-5">
+            <h1>Hello! I am Joshua Liu</h1>
+            <hr class="col col-12 ml-0">
+            <div>
+                <p>Hi, I'm Joshua and this is my site.</p>
+                <p>I also go by YouAreFantastic on some other sites.</p>
+                <p>You can view my resume <a href="{% url 'resume' %}">here.</a></p>
+                <p>See something wrong with this site? Feel free to report them on my <a href="https://github.com/JoshuaTianYangLiu">Github.</a></p>
+                <p>Enjoy your stay!</p>
+            </div>
+        </div>
+        <div class="col col-7">
+            <img class="rounded float-right" src="https://avatars2.githubusercontent.com/u/46253730?s=460&v=4" width="300em" height="300em">
+        </div>
+    </div>
+</div>
+
+<div class="page-footer footer footer-index py-4">
+    <ul class="list-inline text-center">
+        <li class="list-inline-item">
+            <a href="https://discord.com/users/107276820184842240" class="text-muted"><i class="zoom fab fa-discord fa-3x px-2"></i></a>
+        </li>
+        <li class="list-inline-item">
+            <a href="https://github.com/JoshuaTianYangLiu" class="text-muted"><i class="zoom fab fa-github fa-3x px-2"></i></a>
+        </li>
+        <li class="list-inline-item">
+            <a href="mailto:JoshuaL@youarefantastic.ca" class="text-muted"><i class="zoom far fa-envelope fa-3x px-2"></i></a>
+        </li>
+    </ul>
+</div>
+
+<script>
+    $(document).ready(function() {
+        particlesJS('particles-js', 
+    {
+        "particles": {
+            "number": {
+            "value": 80,
+            "density": {
+                "enable": true,
+                "value_area": 800
+            }
+            },
+            "color": {
+            "value": "#aaaaaa"
+            },
+            "shape": {
+            "type": "circle",
+            "stroke": {
+                "width": 0,
+                "color": "#000000"
+            },
+            "polygon": {
+                "nb_sides": 5
+            },
+            "image": {
+                "src": "img/github.svg",
+                "width": 100,
+                "height": 100
+            }
+            },
+            "opacity": {
+            "value": 0.5,
+            "random": false,
+            "anim": {
+                "enable": false,
+                "speed": 1,
+                "opacity_min": 0.1,
+                "sync": false
+            }
+            },
+            "size": {
+            "value": 3,
+            "random": true,
+            "anim": {
+                "enable": false,
+                "speed": 40,
+                "size_min": 0.1,
+                "sync": false
+            }
+            },
+            "line_linked": {
+            "enable": true,
+            "distance": 200,
+            "color": "#aaaaaa",
+            "opacity": 0.4,
+            "width": 1
+            },
+            "move": {
+            "enable": true,
+            "speed": 3,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+                "enable": false,
+                "rotateX": 600,
+                "rotateY": 1200
+            }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+            "onhover": {
+                "enable": false,
+                "mode": "grab"
+            },
+            "onclick": {
+                "enable": false,
+                "mode": "repulse"
+            },
+            "resize": true
+            },
+            "modes": {
+            "grab": {
+                "distance": 400,
+                "line_linked": {
+                "opacity": 1
+                }
+            },
+            "bubble": {
+                "distance": 400,
+                "size": 40,
+                "duration": 2,
+                "opacity": 8,
+                "speed": 3
+            },
+            "repulse": {
+                "distance": 200,
+                "duration": 0.4
+            },
+            "push": {
+                "particles_nb": 4
+            },
+            "remove": {
+                "particles_nb": 2
+            }
+            }
+        },
+        "retina_detect": true
+    });
+});
+</script>
+
+{% endblock content %}
