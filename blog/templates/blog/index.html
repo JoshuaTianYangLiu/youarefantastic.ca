@@ -1,0 +1,24 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Blog</title>
+{% endblock title %}
+
+{% block content %}
+    {{ block.super }}
+    <div class="container">
+        <h1>Blog</h1>
+
+        <hr>
+        {% if latest_post_list %}
+            <ul>
+                {% for post in latest_post_list %}
+                    <li><a href="{% url 'blog:detail' post.id %}">{{ post.title }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+        {% endif %}
+    </div>
+    {% include 'footer.html' %}
+{% endblock content %}

@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, Http404
+from .models import Author, Category, Post
 # Create your views here.
 
-# blog/
+# blog/?page=1
 # blog/:id/
 # blog/page/:id/
 # Allow commenting?
@@ -14,7 +15,9 @@ from django.http import HttpResponse, Http404
 # filters
 
 def index(request):
-    return HttpResponse('<h1>Not Implemented Yet!</h1>')
+    latest_post_list = Post.objects.order_by('-created_on')[:5]
+    context = {'latest_post_list': latest_post_list}
+    return render(request, 'blog/index.html', context)
 
 def detail(request, pk):
     return HttpResponse(f'detail {pk}')
