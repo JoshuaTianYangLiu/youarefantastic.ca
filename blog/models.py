@@ -1,4 +1,5 @@
 from django.db import models
+from martor.models import MartorField
 
 # Create your models here.
 # Allow commenting?
@@ -21,12 +22,12 @@ class Author(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
-    body = models.TextField()
+    body = MartorField()
     created_on = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
     categories = models.ManyToManyField('Category', related_name='posts')
     authors = models.ManyToManyField('Author', related_name='posts')
-    image = models.ImageField(upload_to='uploads/', blank=True)
+    image = models.ImageField(upload_to='media/', blank=True)
 
     def __str__(self):
         return self.title

@@ -1,5 +1,6 @@
 {% extends 'navbar.html' %}
 {% load static %}
+{% load martortags %}
 
 {% block title %}
     <title>Blog</title>
@@ -15,10 +16,10 @@
             <ul>
                 {% for post in latest_post_list %}
                     <div class="card">
-                        {% if post.image %}<img src="{{ post.image.url }}">{% endif %}
+                        {% if post.image %}<img src="{{ post.image.url }}" class="img-fluid">{% endif %}
                         <div class="card-body">
                             <h1 class="card-title"><a href="{% url 'blog:detail' post.id %}" class="stretched-link">{{ post.title }}</a></h1>
-                            <p class="card-text">{{ post.body|linebreaks|truncatechars:100 }}</p>
+                            <p class="card-text">{{ post.body|safe_markdown|truncatechars:100 }}</p>
                             
                         </div>
                         <li></li>

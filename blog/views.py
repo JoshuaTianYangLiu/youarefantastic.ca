@@ -21,7 +21,7 @@ def index(request):
 
 def detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    return HttpResponse(f'detail {post.body}')
+    return render(request, 'blog/detail.html', {'post': post})
 
 def page(request, num):
     return HttpResponse(f'page {num}')
