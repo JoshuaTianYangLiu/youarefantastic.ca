@@ -15,8 +15,10 @@ from .models import Author, Category, Post
 # filters
 
 def index(request):
-    latest_post_list = Post.objects.order_by('-created_on')[:5]
+    latest_post_list = Post.objects.order_by('-created_on')
     context = {'latest_post_list': latest_post_list}
+    print("CATEGORIES",latest_post_list)
+    print("CATEGORIES",latest_post_list[0].authors.name)
     return render(request, 'blog/index.html', context)
 
 def detail(request, pk):

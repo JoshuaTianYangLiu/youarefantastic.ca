@@ -1,6 +1,7 @@
 {% extends 'navbar.html' %}
 {% load static %}
 {% load martortags %}
+{% load blog_extras %}
 
 {% block title %}
     <title>Blog</title>
@@ -19,8 +20,11 @@
                         {% if post.image %}<img src="{{ post.image.url }}" class="img-fluid">{% endif %}
                         <div class="card-body">
                             <h1 class="card-title"><a href="{% url 'blog:detail' post.id %}" class="stretched-link">{{ post.title }}</a></h1>
+                            <h6 class="card-subtitle mb-2 text-muted">By: {{ post.authors.all|getattribute:'name'|join:", "}}</h6>
                             <p class="card-text">{{ post.body|safe_markdown|truncatechars:100 }}</p>
-                            
+                            {% for category in post.categories.all %}
+                                <h3><span class="badge badge-primary">{{ category.name }}</span></h3>
+                            {% endfor %}
                         </div>
                         <li></li>
                     </div>
@@ -30,4 +34,10 @@
         {% endif %}
     </div>
     {% include 'footer.html' %}
+    <script>
+    $('pre').each(function(i, block){
+        hljs.highlightBlock(block);
+    });
+    $('.ui.dropdown').dropdown();
+    </script>
 {% endblock content %}

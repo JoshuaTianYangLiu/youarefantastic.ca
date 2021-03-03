@@ -1,19 +1,25 @@
 {% extends 'navbar.html' %}
 {% load static %}
 {% load martortags %}
+{% load blog_extras %}
 
 {% block title %}
-    <title>Blog</title>
+    <title>{{ post.title }}</title>
 {% endblock title %}
 
 {% block content %}
     {{ block.super }}
     <div class="container">
         <h1>{{ post.title }}</h1>
+        <h6 class="card-subtitle mb-2 text-muted">By: {{ post.authors.all|getattribute:'name'|join:", "}}</h6>
         <hr>
-        <pre>
-            {{post.body|safe_markdown}}
-        </h1>
+        {{post.body|safe_markdown}}
     </div>
     {% include 'footer.html' %}
+    <script>
+    $('pre').each(function(i, block){
+        hljs.highlightBlock(block);
+    });
+    $('.ui.dropdown').dropdown();
+    </script>
 {% endblock content %}
