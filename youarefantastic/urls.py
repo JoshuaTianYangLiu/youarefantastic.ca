@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from home import views
+from blog.views import BlogMarkdownPreviewView
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -26,5 +27,10 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('admin/', admin.site.urls),
     path('martor/', include('martor.urls')),
+    path('widgets/', include([
+        path('preview/', include([
+            path('blog', BlogMarkdownPreviewView.as_view(), name='blog_preview')
+        ]))
+    ]))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

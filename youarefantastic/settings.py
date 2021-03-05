@@ -132,7 +132,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR,  'media')
 MEDIA_URL = '/media/'
 
 # Choices are: "semantic", "bootstrap"
-MARTOR_THEME = 'semantic'
+MARTOR_THEME = 'bootstrap'
 
 # Global martor settings
 # Input: string boolean, `true/false`
@@ -141,7 +141,7 @@ MARTOR_ENABLE_CONFIGS = {
     'imgur': 'true',        # to enable/disable imgur/custom uploader.
     'mention': 'false',     # to enable/disable mention
     'jquery': 'true',       # to include/revoke jquery (require for admin default django)
-    'living': 'true',      # to enable/disable live updates in preview
+    'living': 'false',      # to enable/disable live updates in preview
     'spellcheck': 'false',  # to enable/disable spellcheck in form textareas
     'hljs': 'true',         # to enable/disable hljs highlighting in preview
 }
@@ -155,7 +155,7 @@ MARTOR_TOOLBAR_BUTTONS = [
 ]
 
 # To setup the martor editor with title label or not (default is False)
-MARTOR_ENABLE_LABEL = False
+MARTOR_ENABLE_LABEL = True
 
 # Imgur API Keys
 MARTOR_IMGUR_CLIENT_ID = os.getenv('MARTOR_IMGUR_CLIENT_ID')
@@ -174,7 +174,7 @@ MARTOR_MARKDOWN_EXTENSIONS = [
 
     # Custom markdown extensions.
     'martor.extensions.urlize',
-    'martor.extensions.del_ins',      # ~~strikethrough~~ and ++underscores++
+    # 'martor.extensions.del_ins',      # ~~strikethrough~~ and ++underscores++
     'martor.extensions.mention',      # to parse markdown mention
     'martor.extensions.emoji',        # to parse markdown emoji
     'martor.extensions.mdx_video',    # to parse embed/iframe video
@@ -193,8 +193,8 @@ MARTOR_SEARCH_USERS_URL = '/martor/search-user/' # default
 MARTOR_MARKDOWN_BASE_EMOJI_URL = 'https://github.githubassets.com/images/icons/emoji/'                  # default from github
 MARTOR_MARKDOWN_BASE_MENTION_URL = 'https://python.web.id/author/'                                      # please change this to your domain
 
-# If you need to use your own themed "bootstrap" or "semantic ui" dependency
-# replace the values with the file in your static files dir
-MARTOR_ALTERNATIVE_JS_FILE_THEME = "plugins/js/semantic.min.js"   # default None
-MARTOR_ALTERNATIVE_CSS_FILE_THEME = "plugins/css/semantic.min.css" # default None
+# # If you need to use your own themed "bootstrap" or "semantic ui" dependency
+# # replace the values with the file in your static files dir
+MARTOR_ALTERNATIVE_JS_FILE_THEME = "plugins/js/bootstrap.min.js"   # default None
+MARTOR_ALTERNATIVE_CSS_FILE_THEME = "plugins/css/bootstrap.min.css" # default None
 MARTOR_ALTERNATIVE_JQUERY_JS_FILE = "plugins/js/jquery.min.js"        # default None

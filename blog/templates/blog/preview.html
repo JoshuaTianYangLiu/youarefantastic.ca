@@ -1,0 +1,4 @@
+{% load martortags %}
+{% load static %}
+{{ preview_data|safe_markdown }}
+<div data-config="{% static 'blog/mathjax-config.js' %}" class="require-mathjax-support"></div>

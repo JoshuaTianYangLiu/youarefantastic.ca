@@ -5,6 +5,7 @@
 
 {% block title %}
     <title>Blog</title>
+    {% include 'mathjax-load.html' %}
 {% endblock title %}
 
 {% block content %}
@@ -16,18 +17,18 @@
         {% if latest_post_list %}
             <ul>
                 {% for post in latest_post_list %}
-                    <div class="card">
-                        {% if post.image %}<img src="{{ post.image.url }}" class="img-fluid">{% endif %}
-                        <div class="card-body">
+                    <div class="zoom-card shadow card">
+                        <!-- {% if post.image %}<img src="{{ post.image.url }}" class="img-fluid">{% endif %} -->
+                        <div class="card-body" id="MathJax">
                             <h1 class="card-title"><a href="{% url 'blog:detail' post.id %}" class="stretched-link">{{ post.title }}</a></h1>
                             <h6 class="card-subtitle mb-2 text-muted">By: {{ post.authors.all|getattribute:'name'|join:", "}}</h6>
-                            <p class="card-text">{{ post.body|safe_markdown|truncatechars:100 }}</p>
+                            <p class="card-text">{{ post.body|safe_markdown|truncatewords_html:20 }}</p>
                             {% for category in post.categories.all %}
                                 <h3><span class="badge badge-primary">{{ category.name }}</span></h3>
                             {% endfor %}
                         </div>
-                        <li></li>
                     </div>
+                    <div class="row mt-4"></div>
                 {% endfor %}
             </ul>
         {% else %}
