@@ -32,7 +32,13 @@
 
     </head>
     <body>
-        {% block content %}
-        {% endblock content%}
+        <div id="page-container">
+            <div id="content-wrap">
+                {% block content %}
+                {% endblock content%}
+            </div>
+            {% block footer %}
+            {% endblock footer %}
+        </div>
     </body>
 </html>
