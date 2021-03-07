@@ -19,7 +19,7 @@
                 {% for post in latest_post_list %}
                     <div class="zoom-card shadow card">
                         <!-- {% if post.image %}<img src="{{ post.image.url }}" class="img-fluid">{% endif %} -->
-                        <div class="card-body" id="MathJax">
+                        <div class="card-body">
                             <h1 class="card-title"><a href="{% url 'blog:detail' post.id %}" class="stretched-link">{{ post.title }}</a></h1>
                             <h6 class="card-subtitle mb-2 text-muted">By: {{ post.authors.all|getattribute:'name'|join:", "}}</h6>
                             <p class="card-text">{{ post.body|safe_markdown|truncatewords_html:20 }}</p>

@@ -4,7 +4,11 @@ window.MathJax = {
         inlineMath: [
             ['~', '~'],
             ['\\(', '\\)']
-        ]
+        ],
+        displayMath: [
+            ['~~', '~~'],
+            ['$$', '$$'],
+        ],
     },
     showMathMenu: false
 };

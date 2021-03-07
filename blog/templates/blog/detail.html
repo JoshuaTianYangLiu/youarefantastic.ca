@@ -5,11 +5,13 @@
 
 {% block title %}
     <title>{{ post.title }}</title>
+    {% include 'mathjax-load.html' %}
 {% endblock title %}
 
 {% block content %}
     {{ block.super }}
     <div class="container">
+        <div class="row mt-4"></div>    
         <h1>{{ post.title }}</h1>
         <h6 class="card-subtitle mb-2 text-muted">By: {{ post.authors.all|getattribute:'name'|join:", "}}</h6>
         <hr>
