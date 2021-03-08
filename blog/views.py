@@ -34,7 +34,7 @@ class BlogMarkdownPreviewView(MarkdownPreviewView):
 
 
 def index(request):
-    latest_post_list = Post.objects.order_by('-created_on')
+    latest_post_list = Post.objects.filter(is_public=True).order_by('-created_on')
     context = {'latest_post_list': latest_post_list}
     return render(request, 'blog/index.html', context)
 

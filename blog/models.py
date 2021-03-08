@@ -28,6 +28,7 @@ class Post(models.Model):
     categories = models.ManyToManyField('Category', related_name='posts')
     authors = models.ManyToManyField('Author', related_name='posts')
     image = models.ImageField(upload_to='media/', blank=True)
+    is_public = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title
