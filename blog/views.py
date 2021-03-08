@@ -39,7 +39,7 @@ def index(request):
     return render(request, 'blog/index.html', context)
 
 def detail(request, pk):
-    post = get_object_or_404(Post, pk=pk)
+    post = get_object_or_404(Post, pk=pk, is_public=True)
     return render(request, 'blog/detail.html', {'post': post})
 
 def page(request, num):
